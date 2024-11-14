@@ -2,7 +2,7 @@ import os
 
 from flask import Flask
 from flask import request, jsonify
-from src.translator import translate_content, query_llm_robust
+from src.translator import query_llm_robust
 
 app = Flask(__name__)
 
