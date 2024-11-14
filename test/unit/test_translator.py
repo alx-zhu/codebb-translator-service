@@ -58,9 +58,9 @@ def test_french_example():
     assert is_valid_translation("This is a sentence in French.", translated_content)
 
 def test_japanese_example():
-    is_english, translated_content = query_llm_robust("今日は良い天気ですね。")
+    is_english, translated_content = query_llm_robust("これは日本語のメッセージです")
     assert is_english == False
-    assert is_valid_translation("The weather is nice today.", translated_content)
+    assert is_valid_translation("This is a Japanese message", translated_content)
 
 def test_german_example():
     is_english, translated_content = query_llm_robust("Wie geht es dir heute?")
