@@ -10,6 +10,9 @@ on:
       - f24
   workflow_dispatch:
 
+env:
+  OPENAI_API_KEY: ${{ secrets.OPEN_AI_API_KEY }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -68,8 +71,6 @@ jobs:
       - name: "Deploy to Azure Web App"
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPEN_AI_API_KEY }}
         with:
           app-name: "codebb-translator-service"
           slot-name: "Production"
